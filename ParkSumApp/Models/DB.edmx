@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ParkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParkCardTrace" Type="nvarchar(max)" />
+          <Property Name="CardNo" Type="int" Nullable="false" />
+          <Property Name="ParkSapceID" Type="int" Nullable="false" />
+          <Property Name="CarSizeType" Type="int" Nullable="false" />
+          <Property Name="CarPhoto" Type="nvarchar(max)" />
+          <Property Name="PlateNumber" Type="nvarchar(max)" />
+          <Property Name="CardInTime" Type="datetime" />
+          <Property Name="ParkInTime" Type="datetime" />
+          <Property Name="CardOutTime" Type="datetime" />
+          <Property Name="ParkOutTime" Type="datetime" />
+          <Property Name="LastAccountTime" Type="datetime" />
+          <Property Name="DuePay" Type="float" Nullable="false" />
+          <Property Name="ActualPay" Type="float" Nullable="false" />
+          <Property Name="PayMethod" Type="int" Nullable="false" />
+          <Property Name="CardType" Type="nvarchar(max)" />
+          <Property Name="LogOperator" Type="nvarchar(max)" />
+          <Property Name="GarageID" Type="int" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="carModelName" Type="nvarchar(max)" />
+          <Property Name="inPort" Type="nvarchar(max)" />
+          <Property Name="outPort" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="ParkModelStoreContainer">
+          <EntitySet Name="AccountLog" EntityType="Self.AccountLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ParkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParkCardTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardNo" Type="Int32" Nullable="false" />
+          <Property Name="ParkSapceID" Type="Int32" Nullable="false" />
+          <Property Name="CarSizeType" Type="Int32" Nullable="false" />
+          <Property Name="CarPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardInTime" Type="DateTime" Precision="3" />
+          <Property Name="ParkInTime" Type="DateTime" Precision="3" />
+          <Property Name="CardOutTime" Type="DateTime" Precision="3" />
+          <Property Name="ParkOutTime" Type="DateTime" Precision="3" />
+          <Property Name="LastAccountTime" Type="DateTime" Precision="3" />
+          <Property Name="DuePay" Type="Double" Nullable="false" />
+          <Property Name="ActualPay" Type="Double" Nullable="false" />
+          <Property Name="PayMethod" Type="Int32" Nullable="false" />
+          <Property Name="CardType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogOperator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GarageID" Type="Int32" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="carModelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="inPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="outPort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="YF_PCY_DUAL_LGFY_EEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountLog" EntityType="Self.AccountLog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ParkModelStoreContainer" CdmEntityContainer="YF_PCY_DUAL_LGFY_EEntities">
+          <EntitySetMapping Name="AccountLog">
+            <EntityTypeMapping TypeName="ParkModel.AccountLog">
+              <MappingFragment StoreEntitySet="AccountLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParkCardTrace" ColumnName="ParkCardTrace" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="ParkSapceID" ColumnName="ParkSapceID" />
+                <ScalarProperty Name="CarSizeType" ColumnName="CarSizeType" />
+                <ScalarProperty Name="CarPhoto" ColumnName="CarPhoto" />
+                <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+                <ScalarProperty Name="CardInTime" ColumnName="CardInTime" />
+                <ScalarProperty Name="ParkInTime" ColumnName="ParkInTime" />
+                <ScalarProperty Name="CardOutTime" ColumnName="CardOutTime" />
+                <ScalarProperty Name="ParkOutTime" ColumnName="ParkOutTime" />
+                <ScalarProperty Name="LastAccountTime" ColumnName="LastAccountTime" />
+                <ScalarProperty Name="DuePay" ColumnName="DuePay" />
+                <ScalarProperty Name="ActualPay" ColumnName="ActualPay" />
+                <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="LogOperator" ColumnName="LogOperator" />
+                <ScalarProperty Name="GarageID" ColumnName="GarageID" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="carModelName" ColumnName="carModelName" />
+                <ScalarProperty Name="inPort" ColumnName="inPort" />
+                <ScalarProperty Name="outPort" ColumnName="outPort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,9 @@
+﻿<prism:PrismApplication x:Class="ParkSumApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	     xmlns:prism="http://prismlibrary.com/"
+             xmlns:local="clr-namespace:ParkSumApp">
+    <Application.Resources>
+         
+    </Application.Resources>
+</prism:PrismApplication>
